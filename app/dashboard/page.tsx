@@ -161,6 +161,7 @@ export default function DashboardPage() {
   const [typeFilter, setTypeFilter] = useState<ReportType | "all">("all")
   const [severityFilter, setSeverityFilter] = useState<Severity | "all">("all")
   const [statusFilter, setStatusFilter] = useState<ReportStatus | "all">("all")
+  const [showAllLocations, setShowAllLocations] = useState(false)
 
   useEffect(() => {
     fetchReports()
@@ -212,17 +213,10 @@ export default function DashboardPage() {
   return (
     <PageLayout>
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-              <LayoutDashboardIcon className="h-6 w-6" />
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold">UDAN Dashboard</h1>
-              <p className="text-muted-foreground">Combined Safety View - All Reports</p>
-            </div>
-          </div>
+        {/* Minimal Header */}
+        <div className="mb-10">
+          <h1 className="text-2xl font-semibold tracking-tight text-foreground">Dashboard</h1>
+          <p className="mt-1 text-sm text-muted-foreground">Overview of all safety reports</p>
         </div>
 
         {isLoading ? (
@@ -231,138 +225,247 @@ export default function DashboardPage() {
           </div>
         ) : (
           <>
-            {/* Summary Stats */}
-            <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <Card>
-                <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">Total Reports</CardTitle>
-                  <FileTextIcon className="h-4 w-4 text-muted-foreground" />
-                </CardHeader>
-                <CardContent>
-                  <div className="text-3xl font-bold">{stats.total}</div>
-                  <p className="text-xs text-muted-foreground">{stats.highSeverity.length} high severity</p>
+            {/* Minimal Stats Grid */}
+            <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <Card className="border-0 bg-muted/40 shadow-none transition-all hover:bg-muted/60">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Total</p>
+                      <p className="mt-2 text-3xl font-light tabular-nums">{stats.total}</p>
+                      <p className="mt-1 text-xs text-muted-foreground">{stats.highSeverity.length} critical</p>
+                    </div>
+                    <FileTextIcon className="h-5 w-5 text-muted-foreground/40" />
+                  </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-orange-200 dark:border-orange-800">
-                <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">Road Reports</CardTitle>
-                  <AlertTriangleIcon className="h-4 w-4 text-orange-500" />
-                </CardHeader>
-                <CardContent>
-                  <div className="text-3xl font-bold">{stats.road.length}</div>
-                  <p className="text-xs text-muted-foreground">{getHighSeverityPercent(stats.road)}% high severity</p>
+              <Card className="border-0 bg-orange-50/50 shadow-none transition-all hover:bg-orange-50/80 dark:bg-orange-950/10 dark:hover:bg-orange-950/20">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-wider text-orange-700 dark:text-orange-400">Road</p>
+                      <p className="mt-2 text-3xl font-light tabular-nums text-orange-900 dark:text-orange-200">{stats.road.length}</p>
+                      <p className="mt-1 text-xs text-orange-600/70 dark:text-orange-400/70">{getHighSeverityPercent(stats.road)}% critical</p>
+                    </div>
+                    <AlertTriangleIcon className="h-5 w-5 text-orange-400/40" />
+                  </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-blue-200 dark:border-blue-800">
-                <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">Water Reports</CardTitle>
-                  <DropletsIcon className="h-4 w-4 text-blue-500" />
-                </CardHeader>
-                <CardContent>
-                  <div className="text-3xl font-bold">{stats.water.length}</div>
-                  <p className="text-xs text-muted-foreground">{getHighSeverityPercent(stats.water)}% high severity</p>
+              <Card className="border-0 bg-blue-50/50 shadow-none transition-all hover:bg-blue-50/80 dark:bg-blue-950/10 dark:hover:bg-blue-950/20">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-wider text-blue-700 dark:text-blue-400">Water</p>
+                      <p className="mt-2 text-3xl font-light tabular-nums text-blue-900 dark:text-blue-200">{stats.water.length}</p>
+                      <p className="mt-1 text-xs text-blue-600/70 dark:text-blue-400/70">{getHighSeverityPercent(stats.water)}% critical</p>
+                    </div>
+                    <DropletsIcon className="h-5 w-5 text-blue-400/40" />
+                  </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-emerald-200 dark:border-emerald-800">
-                <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">Health Reports</CardTitle>
-                  <HeartIcon className="h-4 w-4 text-emerald-500" />
-                </CardHeader>
-                <CardContent>
-                  <div className="text-3xl font-bold">{stats.health.length}</div>
-                  <p className="text-xs text-muted-foreground">{getHighSeverityPercent(stats.health)}% high severity</p>
+              <Card className="border-0 bg-emerald-50/50 shadow-none transition-all hover:bg-emerald-50/80 dark:bg-emerald-950/10 dark:hover:bg-emerald-950/20">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Health</p>
+                      <p className="mt-2 text-3xl font-light tabular-nums text-emerald-900 dark:text-emerald-200">{stats.health.length}</p>
+                      <p className="mt-1 text-xs text-emerald-600/70 dark:text-emerald-400/70">{getHighSeverityPercent(stats.health)}% critical</p>
+                    </div>
+                    <HeartIcon className="h-5 w-5 text-emerald-400/40" />
+                  </div>
                 </CardContent>
               </Card>
             </div>
 
-            {/* Filters */}
-            <Card className="mb-8">
-              <CardHeader className="pb-3">
-                <CardTitle className="flex items-center gap-2 text-base">
-                  <FilterIcon className="h-4 w-4" />
-                  Filters
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-4">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Type</label>
-                    <div className="flex flex-wrap gap-2">
-                      {(["all", "road", "water", "health"] as const).map((type) => (
-                        <Button
-                          key={type}
-                          variant={typeFilter === type ? "default" : "outline"}
-                          size="sm"
-                          onClick={() => setTypeFilter(type)}
-                        >
-                          {type.charAt(0).toUpperCase() + type.slice(1)}
-                        </Button>
-                      ))}
-                    </div>
+            {/* Subtle Filters */}
+            <Card className="mb-8 border-0 bg-muted/20 shadow-none">
+              <CardContent className="p-6">
+                <div className="flex flex-col gap-6">
+                  <div className="flex items-center gap-3">
+                    <FilterIcon className="h-4 w-4 text-muted-foreground" />
+                    <span className="text-sm font-medium text-muted-foreground">Filter by</span>
                   </div>
-
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Severity</label>
-                    <div className="flex flex-wrap gap-2">
-                      {(["all", "low", "medium", "high"] as const).map((severity) => (
-                        <Button
-                          key={severity}
-                          variant={severityFilter === severity ? "default" : "outline"}
-                          size="sm"
-                          onClick={() => setSeverityFilter(severity)}
-                        >
-                          {severity.charAt(0).toUpperCase() + severity.slice(1)}
-                        </Button>
-                      ))}
+                  
+                  <div className="grid gap-6 sm:grid-cols-3">
+                    <div className="space-y-3">
+                      <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Type</label>
+                      <div className="flex flex-wrap gap-2">
+                        {(["all", "road", "water", "health"] as const).map((type) => (
+                          <Button
+                            key={type}
+                            variant={typeFilter === type ? "default" : "ghost"}
+                            size="sm"
+                            onClick={() => setTypeFilter(type)}
+                            className={typeFilter === type ? "shadow-none" : "hover:bg-muted/60"}
+                          >
+                            {type === "all" ? "All" : type.charAt(0).toUpperCase() + type.slice(1)}
+                          </Button>
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Status</label>
-                    <div className="flex flex-wrap gap-2">
-                      {(["all", "open", "resolved"] as const).map((status) => (
-                        <Button
-                          key={status}
-                          variant={statusFilter === status ? "default" : "outline"}
-                          size="sm"
-                          onClick={() => setStatusFilter(status)}
-                        >
-                          {status.charAt(0).toUpperCase() + status.slice(1)}
-                        </Button>
-                      ))}
+                    <div className="space-y-3">
+                      <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Severity</label>
+                      <div className="flex flex-wrap gap-2">
+                        {(["all", "low", "medium", "high"] as const).map((severity) => (
+                          <Button
+                            key={severity}
+                            variant={severityFilter === severity ? "default" : "ghost"}
+                            size="sm"
+                            onClick={() => setSeverityFilter(severity)}
+                            className={severityFilter === severity ? "shadow-none" : "hover:bg-muted/60"}
+                          >
+                            {severity === "all" ? "All" : severity.charAt(0).toUpperCase() + severity.slice(1)}
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="space-y-3">
+                      <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Status</label>
+                      <div className="flex flex-wrap gap-2">
+                        {(["all", "open", "resolved"] as const).map((status) => (
+                          <Button
+                            key={status}
+                            variant={statusFilter === status ? "default" : "ghost"}
+                            size="sm"
+                            onClick={() => setStatusFilter(status)}
+                            className={statusFilter === status ? "shadow-none" : "hover:bg-muted/60"}
+                          >
+                            {status === "all" ? "All" : status.charAt(0).toUpperCase() + status.slice(1)}
+                          </Button>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Map */}
-            <Card className="mb-8">
-              <CardHeader className="pb-3">
-                <CardTitle className="flex items-center gap-2">
-                  <MapPinIcon className="h-5 w-5" />
-                  Reports Map
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <div className="overflow-hidden rounded-b-lg">
-                  <MapWithMarkers reports={filteredReports} className="h-[400px] w-full" />
+            {/* Modern Location Section */}
+            <div className="mb-10 space-y-8">
+              {/* Sleek Header */}
+              <div className="flex items-end justify-between border-b border-border/50 pb-4">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <MapPinIcon className="h-6 w-6 text-primary" />
+                    <h2 className="text-2xl font-bold tracking-tight">Location Overview</h2>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Real-time incident tracking across Uttarakhand</p>
                 </div>
-              </CardContent>
-            </Card>
+                <div className="flex items-center gap-6">
+                  <div className="flex gap-4">
+                    <div className="flex items-center gap-2 text-sm">
+                      <span className="h-2 w-2 rounded-sm bg-orange-500" />
+                      <span>Road</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <span className="h-2 w-2 rounded-sm bg-blue-500" />
+                      <span>Water</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <span className="h-2 w-2 rounded-sm bg-emerald-500" />
+                      <span>Health</span>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-2xl font-bold tabular-nums">{filteredReports.length}</div>
+                    <div className="text-xs text-muted-foreground uppercase tracking-wider">Active</div>
+                  </div>
+                </div>
+              </div>
 
-            {/* Reports List */}
-            <div>
-              <h2 className="mb-4 text-xl font-semibold">All Reports ({filteredReports.length})</h2>
+              {/* Dual Panel Layout */}
+              <div className="grid gap-6 lg:grid-cols-3">
+                {/* Location List - 2 columns */}
+                <div className="lg:col-span-2 space-y-3">
+                  <div className="flex items-center justify-between px-1">
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Uttarakhand Region</h3>
+                    <span className="text-xs text-muted-foreground">{filteredReports.length} locations</span>
+                  </div>
+                  
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {(showAllLocations ? filteredReports : filteredReports.slice(0, 6)).map((report) => (
+                      <div
+                        key={report.id}
+                        className="group relative flex items-start gap-4 rounded-lg border border-border/50 bg-card p-4 transition-all hover:border-primary/50 hover:shadow-md cursor-pointer"
+                      >
+                        <div className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full ${
+                          report.type === 'road' ? 'bg-orange-500/10 text-orange-500' :
+                          report.type === 'water' ? 'bg-blue-500/10 text-blue-500' :
+                          'bg-emerald-500/10 text-emerald-500'
+                        }`}>
+                          <MapPinIcon className="h-5 w-5" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-medium text-sm leading-tight mb-1 group-hover:text-primary transition-colors">
+                            {report.locationName}
+                          </h4>
+                          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                            <span>1 active report</span>
+                            {report.severity === 'high' && (
+                              <>
+                                <span>•</span>
+                                <span className="font-medium text-destructive">High priority</span>
+                              </>
+                            )}
+                          </div>
+                        </div>
+                        <div className={`h-2 w-2 rounded-full mt-1 ${
+                          report.type === 'road' ? 'bg-orange-500' :
+                          report.type === 'water' ? 'bg-blue-500' :
+                          'bg-emerald-500'
+                        }`} />
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {filteredReports.length > 6 && (
+                    <Button 
+                      variant="outline" 
+                      className="w-full" 
+                      size="sm"
+                      onClick={() => setShowAllLocations(!showAllLocations)}
+                    >
+                      {showAllLocations ? 'Show less' : `View all ${filteredReports.length} locations`}
+                    </Button>
+                  )}
+                </div>
+
+                {/* Map Panel - 1 column */}
+                <div className="lg:col-span-1">
+                  <div className="sticky top-4 space-y-3">
+                    <div className="flex items-center justify-between px-1">
+                      <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Map View</h3>
+                    </div>
+                    <Card className="overflow-hidden border-border/50">
+                      <CardContent className="p-0">
+                        <MapWithMarkers reports={filteredReports} className="h-[600px] w-full" />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Clean Reports List */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <h2 className="text-lg font-medium text-foreground">Reports</h2>
+                <span className="text-sm text-muted-foreground">{filteredReports.length} items</span>
+              </div>
+              
               {filteredReports.length === 0 ? (
-                <EmptyState
-                  icon={<FileTextIcon className="h-8 w-8 text-muted-foreground" />}
-                  title="No reports match filters"
-                  description="Try adjusting your filter settings"
-                />
+                <Card className="border-0 bg-muted/20 shadow-none">
+                  <CardContent className="flex flex-col items-center justify-center py-16">
+                    <FileTextIcon className="h-10 w-10 text-muted-foreground/40" />
+                    <p className="mt-4 text-sm font-medium text-foreground">No reports found</p>
+                    <p className="mt-1 text-xs text-muted-foreground">Adjust your filters to see results</p>
+                  </CardContent>
+                </Card>
               ) : (
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {filteredReports.map((report) => (
