@@ -1,5 +1,12 @@
 {
+  "/api/analyze-road/route": "app/api/analyze-road/route.js",
+  "/api/emergency-advice/route": "app/api/emergency-advice/route.js",
   "/api/reports/route": "app/api/reports/route.js",
+  "/chatbot/page": "app/chatbot/page.js",
+  "/community/page": "app/community/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/page": "app/page.js"
+  "/health-safety/page": "app/health-safety/page.js",
+  "/page": "app/page.js",
+  "/road-safety/page": "app/road-safety/page.js",
+  "/water-safety/page": "app/water-safety/page.js"
 }

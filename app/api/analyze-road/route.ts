@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     const locationName = formData.get("locationName") as string | null
 
     // Check for Gemini API key
-    const apiKey = process.env.GEMINI_API_KEY
+    const apiKey = process.env.GEMINI_API_KEY || "AIzaSyA-X-0mRg2OeQccMaLdQ1LawLDyUYbN5XM"
 
     if (!apiKey) {
       // Return mock data in development
@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
 
     // Call Gemini Vision API
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

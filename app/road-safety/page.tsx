@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useLanguage } from "@/contexts/language-context"
 import { PageLayout } from "@/components/page-layout"
 import { FileUpload } from "@/components/file-upload"
 import { AnalysisResult } from "@/components/analysis-result"
@@ -9,78 +10,17 @@ import { LoadingSpinner } from "@/components/loading-spinner"
 import { LocationMap } from "@/components/location-map"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { mockRoadHazards, mockSafetyCenters } from "@/lib/mock-data"
+import { Label } from "@/components/ui/label"
+import { Badge } from "@/components/ui/badge"
+import { AlertTriangle, Upload, Check, X, Info } from "lucide-react"
 import type { Report, AIAnalysisResult } from "@/lib/types"
-
-function AlertTriangleIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
-      <path d="M12 9v4" />
-      <path d="M12 17h.01" />
-    </svg>
-  )
-}
-
-function ScanIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M3 7V5a2 2 0 0 1 2-2h2" />
-      <path d="M17 3h2a2 2 0 0 1 2 2v2" />
-      <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
-      <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
-    </svg>
-  )
-}
-
-function MountainIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-    </svg>
-  )
-}
+import { mockRoadHazards, mockSafetyCenters } from "@/lib/mock-data"
 
 export default function RoadSafetyPage() {
+  const { t } = useLanguage()
   const [file, setFile] = useState<File | null>(null)
   const [description, setDescription] = useState("")
-  const [locationName, setLocationName] = useState("")
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [result, setResult] = useState<AIAnalysisResult | null>(null)
   const [isSaving, setIsSaving] = useState(false)
@@ -113,7 +53,6 @@ export default function RoadSafetyPage() {
       const formData = new FormData()
       formData.append("image", file)
       if (description) formData.append("description", description)
-      if (locationName) formData.append("locationName", locationName)
 
       const response = await fetch("/api/analyze-road", {
         method: "POST",
@@ -143,7 +82,7 @@ export default function RoadSafetyPage() {
           title: result.title,
           description: description || "Road condition analysis",
           advice: result.advice,
-          locationName: locationName || "Unknown Location",
+          locationName: "Road Location",
           lat: null,
           lng: null,
           categoryDetails: result.categoryDetails,
@@ -153,7 +92,6 @@ export default function RoadSafetyPage() {
       await fetchReports()
       setFile(null)
       setDescription("")
-      setLocationName("")
       setResult(null)
     } catch (error) {
       console.error("Error saving report:", error)
@@ -164,102 +102,202 @@ export default function RoadSafetyPage() {
 
   return (
     <PageLayout>
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-8">
-          <div className="mb-4 flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400">
-              <AlertTriangleIcon className="h-6 w-6" />
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold">Road & Path Safety</h1>
-              <p className="text-muted-foreground">Detect landslides, road cracks, and blocked paths</p>
-            </div>
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+        {/* Clean Header */}
+        <div className="mb-8 text-center">
+          <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 shadow-lg">
+            <AlertTriangle className="h-8 w-8 text-white" />
           </div>
-
-          <div className="flex items-center gap-2 rounded-lg bg-orange-50 p-4 text-sm text-orange-800 dark:bg-orange-900/20 dark:text-orange-300">
-            <MountainIcon className="h-5 w-5 flex-shrink-0" />
-            <p>
-              Uttarakhand&apos;s hill roads are vulnerable to landslides and damage. Use this tool to check road
-              conditions before traveling.
-            </p>
-          </div>
+          <h1 className="mb-2 text-4xl font-bold">{t("road.title")}</h1>
+          <p className="text-lg text-muted-foreground">
+            {t("road.subtitle")}
+          </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          {/* Analysis Card */}
-          <div className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <ScanIcon className="h-5 w-5" />
-                  Check Road Safety with AI
-                </CardTitle>
-                <CardDescription>Upload a photo of the road or path to analyze its safety</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <FileUpload onFileSelect={setFile} />
-
-                <div className="space-y-2">
-                  <Label htmlFor="description">Additional Context (Optional)</Label>
-                  <Textarea
-                    id="description"
-                    placeholder="e.g., Road looks damaged after yesterday's rain"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    rows={3}
-                  />
+        {/* Main Upload Card */}
+        <Card className="mb-8 border-2">
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl">{t("road.uploadTitle")}</CardTitle>
+            <CardDescription className="text-base">
+              {t("road.uploadDesc")}
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {/* Upload Area */}
+            <div className="flex flex-col items-center">
+              <FileUpload onFileSelect={setFile} />
+              {file && (
+                <div className="mt-4 flex items-center gap-2 rounded-lg bg-green-50 px-4 py-2 text-sm text-green-700 dark:bg-green-900/20 dark:text-green-400">
+                  <Check className="h-4 w-4" />
+                  <span>{file.name}</span>
                 </div>
+              )}
+            </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="location">Location Name (Optional)</Label>
-                  <Input
-                    id="location"
-                    placeholder="e.g., Near Tehri Dam, Main Highway"
-                    value={locationName}
-                    onChange={(e) => setLocationName(e.target.value)}
-                  />
+            {/* Context Input */}
+            <div className="space-y-2">
+              <Label htmlFor="description" className="text-base">Additional Context (Optional)</Label>
+              <Textarea
+                id="description"
+                placeholder="e.g., Road damaged after yesterday's rain, loose rocks visible..."
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                rows={3}
+                className="resize-none"
+              />
+            </div>
+
+            {/* Analyze Button */}
+            <Button 
+              onClick={handleAnalyze} 
+              disabled={!file || isAnalyzing} 
+              className="w-full" 
+              size="lg"
+            >
+              {isAnalyzing ? (
+                <>
+                  <LoadingSpinner size="sm" className="mr-2" />
+                  {t("road.analyzing")}
+                </>
+              ) : (
+                <>
+                  <Upload className="mr-2 h-5 w-5" />
+                  {t("road.analyzeBtn")}
+                </>
+              )}
+            </Button>
+          </CardContent>
+        </Card>
+
+        {/* Analysis Result */}
+        {result && (
+          <div className="mb-8">
+            <AnalysisResult result={result} onSave={handleSaveReport} isSaving={isSaving} />
+          </div>
+        )}
+
+        {/* Example Images Section */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Info className="h-5 w-5" />
+              {t("road.guidelinesTitle")}
+            </CardTitle>
+            <CardDescription>{t("road.guidelinesDesc")}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-6 md:grid-cols-2">
+              {/* Good Examples */}
+              <div>
+                <div className="mb-3 flex items-center gap-2">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30">
+                    <Check className="h-5 w-5 text-green-600 dark:text-green-400" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-green-600 dark:text-green-400">{t("road.goodExamples")}</h3>
                 </div>
+                <div className="space-y-3">
+                  <div className="rounded-lg border-2 border-green-200 bg-green-50/50 p-4 dark:border-green-800 dark:bg-green-900/10">
+                    <div className="mb-2 flex items-center gap-2">
+                      <Badge variant="outline" className="border-green-600 text-green-600">{t("common.upload")}</Badge>
+                      <span className="font-medium">{t("road.landslides")}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{t("road.landslidesDesc")}</p>
+                  </div>
+                  <div className="rounded-lg border-2 border-green-200 bg-green-50/50 p-4 dark:border-green-800 dark:bg-green-900/10">
+                    <div className="mb-2 flex items-center gap-2">
+                      <Badge variant="outline" className="border-green-600 text-green-600">{t("common.upload")}</Badge>
+                      <span className="font-medium">{t("road.cracks")}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{t("road.cracksDesc")}</p>
+                  </div>
+                  <div className="rounded-lg border-2 border-green-200 bg-green-50/50 p-4 dark:border-green-800 dark:bg-green-900/10">
+                    <div className="mb-2 flex items-center gap-2">
+                      <Badge variant="outline" className="border-green-600 text-green-600">{t("common.upload")}</Badge>
+                      <span className="font-medium">{t("road.blocked")}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{t("road.blockedDesc")}</p>
+                  </div>
+                  <div className="rounded-lg border-2 border-green-200 bg-green-50/50 p-4 dark:border-green-800 dark:bg-green-900/10">
+                    <div className="mb-2 flex items-center gap-2">
+                      <Badge variant="outline" className="border-green-600 text-green-600">{t("common.upload")}</Badge>
+                      <span className="font-medium">{t("road.erosion")}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{t("road.erosionDesc")}</p>
+                  </div>
+                </div>
+              </div>
 
-                <Button onClick={handleAnalyze} disabled={!file || isAnalyzing} className="w-full" size="lg">
-                  {isAnalyzing ? (
-                    <>
-                      <LoadingSpinner size="sm" className="mr-2" />
-                      Analyzing Road Image...
-                    </>
-                  ) : (
-                    <>
-                      <ScanIcon className="mr-2 h-5 w-5" />
-                      Analyze Road Image
-                    </>
-                  )}
-                </Button>
-              </CardContent>
-            </Card>
+              {/* Bad Examples */}
+              <div>
+                <div className="mb-3 flex items-center gap-2">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/30">
+                    <X className="h-5 w-5 text-red-600 dark:text-red-400" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-red-600 dark:text-red-400">{t("road.badExamples")}</h3>
+                </div>
+                <div className="space-y-3">
+                  <div className="rounded-lg border-2 border-red-200 bg-red-50/50 p-4 dark:border-red-800 dark:bg-red-900/10">
+                    <div className="mb-2 flex items-center gap-2">
+                      <Badge variant="outline" className="border-red-600 text-red-600">{t("common.dontUpload")}</Badge>
+                      <span className="font-medium">{t("road.blurry")}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{t("road.blurryDesc")}</p>
+                  </div>
+                  <div className="rounded-lg border-2 border-red-200 bg-red-50/50 p-4 dark:border-red-800 dark:bg-red-900/10">
+                    <div className="mb-2 flex items-center gap-2">
+                      <Badge variant="outline" className="border-red-600 text-red-600">{t("common.dontUpload")}</Badge>
+                      <span className="font-medium">{t("road.unrelated")}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{t("road.unrelatedDesc")}</p>
+                  </div>
+                  <div className="rounded-lg border-2 border-red-200 bg-red-50/50 p-4 dark:border-red-800 dark:bg-red-900/10">
+                    <div className="mb-2 flex items-center gap-2">
+                      <Badge variant="outline" className="border-red-600 text-red-600">{t("common.dontUpload")}</Badge>
+                      <span className="font-medium">{t("road.dark")}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{t("road.darkDesc")}</p>
+                  </div>
+                  <div className="rounded-lg border-2 border-red-200 bg-red-50/50 p-4 dark:border-red-800 dark:bg-red-900/10">
+                    <div className="mb-2 flex items-center gap-2">
+                      <Badge variant="outline" className="border-red-600 text-red-600">{t("common.dontUpload")}</Badge>
+                      <span className="font-medium">{t("road.distant")}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{t("road.distantDesc")}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
-            {/* Analysis Result */}
-            {result && <AnalysisResult result={result} onSave={handleSaveReport} isSaving={isSaving} />}
-
+        {/* Safety Map */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Road Hazards & Safety Centers</CardTitle>
+            <CardDescription>Nearby reported hazards and emergency response locations</CardDescription>
+          </CardHeader>
+          <CardContent>
             <LocationMap
-              title="Road Hazards & Safety Centers"
+              title="Road Safety Map"
               locations={[...mockRoadHazards, ...mockSafetyCenters]}
               centerLat={30.3165}
               centerLng={78.0322}
               showHazards={true}
+              requestLocation={true}
             />
-          </div>
+          </CardContent>
+        </Card>
 
-          {/* Recent Reports */}
-          <div>
-            <h2 className="mb-4 text-xl font-semibold">Recent Road Reports</h2>
-            {isLoadingReports ? (
-              <div className="flex items-center justify-center py-12">
-                <LoadingSpinner />
-              </div>
-            ) : (
-              <ReportList reports={reports} emptyMessage="No road reports yet" />
-            )}
-          </div>
+        {/* Recent Reports */}
+        <div>
+          <h2 className="mb-4 text-2xl font-bold">Recent Road Reports</h2>
+          {isLoadingReports ? (
+            <div className="flex items-center justify-center py-12">
+              <LoadingSpinner />
+            </div>
+          ) : (
+            <ReportList reports={reports} emptyMessage="No road reports yet. Be the first to contribute!" />
+          )}
         </div>
       </div>
     </PageLayout>

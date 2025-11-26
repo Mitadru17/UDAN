@@ -1,53 +1,7 @@
-[00:00:01.229] Server  LOG     
-[00:00:01.230] Server  LOG        We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
-[00:00:01.230] Server  LOG        The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
-
-[00:00:01.230] Server  LOG        	- include was updated to add '.next/dev/types/**/*.ts'
-[00:00:01.230] Server  LOG     
-[00:00:01.230] Server  LOG        The following mandatory changes were made to your tsconfig.json:
-
-[00:00:01.230] Server  LOG        	- jsx was set to react-jsx (next.js uses the React automatic runtime)
-[00:00:01.230] Server  LOG     
-[00:00:01.308] Server  LOG      ✓ Ready in 1178ms
-[00:00:05.809] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:06.006] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="font-sans antialiased"
--                           __processed_a94d0ac2-50e3-41ce-b8e9-02f24fc923d6__="true"
--                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
-                          >
-                  ...
-
-[00:03:18.529] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:19.224] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:00.518] Server  LOG      ✓ Ready in 336ms
+[00:00:03.561] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.741] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.849] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -79,19 +33,12 @@ It can also happen if the client has a browser extension installed which messes 
                         <html lang="en">
                           <body
                             className="font-sans antialiased"
--                           __processed_e5fc8c6a-dca2-4d23-a852-9a3ee06aa035__="true"
+-                           __processed_b8747175-15c8-4319-a4b9-d69af13ad4d4__="true"
 -                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
                           >
                   ...
 
-[00:03:59.463] Server  LOG      ✓ Compiled in 0ms
-[00:04:27.890] Server  LOG      ✓ Compiled in 79ms
-[00:05:03.236] Server  LOG      ✓ Compiled in 31ms
-[00:05:12.641] Server  LOG      ✓ Compiled in 25ms
-[00:05:32.960] Server  LOG      ✓ Compiled in 26ms
-[00:07:36.984] Server  LOG      ✓ Compiled in 58ms
-[00:07:56.629] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:07:56.757] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:03.951] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -123,8 +70,741 @@ It can also happen if the client has a browser extension installed which messes 
                         <html lang="en">
                           <body
                             className="font-sans antialiased"
--                           __processed_8c532354-1c7c-40cb-925c-c714203f2e50__="true"
+-                           __processed_e8937e24-d1c9-4ab0-a73f-5657f56fabe6__="true"
 -                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
                           >
                   ...
 
+[00:00:06.917] Server  ERROR    ⨯ ./app/chatbot/page.tsx:390:1
+Parsing ecmascript source code failed
+  388 |     </PageLayout>
+  389 |   )
+> 390 | }
+      | ^
+  391 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+
+[00:00:07.049] Browser ERROR   ./app/chatbot/page.tsx:390:1
+Parsing ecmascript source code failed
+  388 |     </PageLayout>
+  389 |   )
+> 390 | }
+      | ^
+  391 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:00:07.521] Browser ERROR   ./app/chatbot/page.tsx:390:1
+Parsing ecmascript source code failed
+  388 |     </PageLayout>
+  389 |   )
+> 390 | }
+      | ^
+  391 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:00:07.521] Browser ERROR   ./app/chatbot/page.tsx:390:1
+Parsing ecmascript source code failed
+  388 |     </PageLayout>
+  389 |   )
+> 390 | }
+      | ^
+  391 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:00:07.526] Browser ERROR   ./app/chatbot/page.tsx:390:1
+Parsing ecmascript source code failed
+  388 |     </PageLayout>
+  389 |   )
+> 390 | }
+      | ^
+  391 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:00:07.559] Server  ERROR    ⨯ ./app/chatbot/page.tsx:390:1
+Parsing ecmascript source code failed
+  388 |     </PageLayout>
+  389 |   )
+> 390 | }
+      | ^
+  391 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+
+[00:00:07.730] Browser ERROR   uncaughtError: Error: ./app/chatbot/page.tsx:390:1
+Parsing ecmascript source code failed
+  388 |     </PageLayout>
+  389 |   )
+> 390 | }
+      | ^
+  391 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+
+[00:00:07.923] Browser ERROR   ./app/chatbot/page.tsx:390:1
+Parsing ecmascript source code failed
+  388 |     </PageLayout>
+  389 |   )
+> 390 | }
+      | ^
+  391 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:00:07.923] Browser ERROR   ./app/chatbot/page.tsx:390:1
+Parsing ecmascript source code failed
+  388 |     </PageLayout>
+  389 |   )
+> 390 | }
+      | ^
+  391 |
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[00:03:02.905] Server  LOG      ✓ Compiled in 120ms
+[00:03:03.670] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:04.881] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/chatbot" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_a4a9d6fb-817a-4da1-ad64-85d59bee1695__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+
+[00:03:49.224] Server  LOG     === Emergency Advice API Called ===
+[00:03:49.225] Server  LOG     Question: "i live near garur should i go to college today then wht route should i tke whih is safe"
+[00:03:49.226] Server  LOG     API Key available: "Yes (length: 39)"
+[00:03:49.226] Server  LOG     Calling Gemini API with context of 15 "reports"
+[00:04:06.158] Server  LOG     Gemini API response status: 200
+[00:04:06.159] Server  LOG     Gemini API response: "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"Hello! As UDAN AI, your safety is my priority. Let's look at the situation near Garur for your commute to college today.\\n\\n**Safety Verdict:** ⚠️ **CAUTION**\\n\\nWhile there are no major roadblocks directly *preventing* travel from Garur, there are active reports of minor road and health concerns in the Bageshwar and surrounding districts that you should be aware of.\\n\\n**Should you go to college today?**\\nYes, you can generally proceed, but with extreme caution and awareness of the local conditions. There are no reports indicating a complete closure of major routes connecting Garur to nearby college towns. However, plan for potentially slower travel and be vigilant.\\n\\n**Recommended Route & Safety Advice (from Garur towards college):**\\n\\n1.  **Kausani-Bageshwar Road (Report #9):**\\n    *   **Issue:** Minor road subsidence observed. This road is highly likely to be part of your commute from Garur.\\n    *   **Safety Advice:** Stay in the center of the road. Avoid parking or driving too close to the edge where subsidence has occurred. Use extra caution, especially if it rains today, as subsidence can worsen with wet conditions. The PWD has been notified for assessment.\\n    *   **Coordinates:** Available for map display (Kausani-Bageshwar Road)\\n\\n2.  **Bageshwar Community Hall (Report #10 - if your college is in Bageshwar):**\\n    *   **Issue:** Food poisoning at a community event. While not directly a road issue, if your college is in Bageshwar, be aware of this local health concern.\\n    *   **Safety Advice:** If you attend any community gatherings or consume food from local vendors, ensure it is freshly prepared and hygienic. Stay hydrated with boiled water.\\n    *   **Coordinates:** Available for map display (Bageshwar Community Hall)\\n\\n3.  **Ranikhet Main Road (Report #7 - if your route involves Ranikhet):**\\n    *   **Issue:** Pothole cluster near a school.\\n    *   **Safety Advice:** Drive carefully at a reduced speed (around 20 km/h). PWD repairs are scheduled to start tomorrow. If your route passes through Ranikhet, try to avoid this specific stretch during school hours (8 AM - 2 PM) due to increased traffic and pedestrian activity.\\n    *   **Coordinates:** Available for map display (Ranikhet Main Road)\\n\\n**General Safety Tips for your Commute:**\\n\\n*   **Check Local Updates:** Before leaving, check local news or contact community members for the latest ground-level information regarding road conditions.\\n*   **Drive Cautiously:** Maintain a reduced speed, especially on winding roads and turns. Be prepared for unexpected obstacles or poor road surfaces.\\n*   **Visibility:** If there's fog or rain, use your headlights and fog lights (if available).\\n*   **Emergency Kit:** Carry a basic emergency kit including water, snacks, a first-aid kit, and fully charged mobile phone.\\n\\n**Emergency Contacts:**\\n\\n*   **108:** Ambulance Service\\n*   **1070:** Disaster Helpline (SDRF Control Room)\\n*   **100:** Police\\n*   **101:** Fire Services\\n\\n**Nearby Facilities:**\\n\\n*   **Hospitals:**\\n    *   Almora District Hospital (Refer to Report #8 for water leakage issue, but still a functional hospital)\\n    *   Base Hospital Haldwani (Further away, but a major facility)\\n*   **Safety Centers:**\\n    *   District Emergency Operations Center (in your district headquarters)\\n\\nStay safe and alert during your commute!\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 1589,\n    \"candidatesTokenCount\": 781,\n    \"totalTokenCount\": 3279,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 1589\n      }\n    ],\n    \"cacheTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 1009\n      }\n    ],\n    \"thoughtsTokenCount\": 909\n  },\n  \"modelVersion\": \"gemini-2.5-flash\",\n  \"responseId\": \"iwYnabDMFO27g8UPr_KusA4\"\n}"
+[00:04:06.160] Server  LOG     Successfully received Gemini response
+[00:04:17.824] Server  LOG     === Emergency Advice API Called ===
+[00:04:17.824] Server  LOG     Question: "Show me on map"
+[00:04:17.825] Server  LOG     API Key available: "Yes (length: 39)"
+[00:04:17.825] Server  LOG     Calling Gemini API with context of 15 "reports"
+[00:04:47.101] Server  LOG     Gemini API response status: 200
+[00:04:47.102] Server  LOG     Gemini API response: "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"You have requested a map view of current active reports in Uttarakhand. As UDAN AI, I will provide the details for all active safety reports, indicating their locations and safety advice.\\n\\nPlease note that as an AI, I cannot display a visual map, but I will provide all necessary location data and advice for each report as if it were being presented on a map interface.\\n\\n---\\n\\nHere are the current active reports in Uttarakhand (November 26, 2025):\\n\\n**1. 📍 MAP VIEW REQUESTED - Report #1 - Tehri Dam Road, Tehri Garhwal**\\n*   **Safety Verdict:** ❌ NOT SAFE\\n*   **Severity:** HIGH\\n*   **Issue:** Major landslide near Tehri Dam Road\\n*   **Current Status:** Active\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** Avoid this route completely. Use the alternate path via Chamba. Contact local authorities (1070 Disaster Helpline) for updates. Do not attempt to clear debris yourself.\\n*   **Nearby Facilities:** SDRF Control Room (1070)\\n\\n**2. 📍 MAP VIEW REQUESTED - Report #2 - Government School, Pithoragarh**\\n*   **Safety Verdict:** ⚠️ CAUTION\\n*   **Severity:** MEDIUM\\n*   **Issue:** Contaminated water source in village school\\n*   **Current Status:** Active\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** Do not drink water directly from this source. Boil water thoroughly before use. Clean the tank immediately. Contact the district water department or Jal Sansthan for assistance.\\n*   **Emergency Contacts:** 1070 (Disaster Helpline)\\n\\n**3. 📍 MAP VIEW REQUESTED - Report #3 - Rudraprayag Bridge**\\n*   **Safety Verdict:** ⚠️ CAUTION\\n*   **Severity:** MEDIUM\\n*   **Issue:** Road cracks developing near bridge\\n*   **Current Status:** Active\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** Drive carefully at a reduced speed (suggested 20 km/h). Avoid heavy vehicles on this bridge. Report to PWD for urgent assessment. Use an alternate route if possible for safety.\\n*   **Emergency Contacts:** 1070 (Disaster Helpline)\\n\\n**4. 📍 MAP VIEW REQUESTED - Report #4 - Joshimath Town**\\n*   **Safety Verdict:** ❌ NOT SAFE (Water Supply)\\n*   **Severity:** HIGH\\n*   **Issue:** Complete water supply disruption\\n*   **Current Status:** Active\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** Use stored water sparingly. Collect rainwater safely if available. Contact emergency services (1070 Disaster Helpline) for assistance and water tankers. Do not use untreated stream water as it may be contaminated.\\n*   **Nearby Facilities:** Emergency Tanker Services\\n\\n**5. 📍 MAP VIEW REQUESTED - Report #5 - Badrinath Highway, Chamoli**\\n*   **Safety Verdict:** ❌ NOT SAFE (Road)\\n*   **Severity:** HIGH\\n*   **Issue:** Massive rockfall on Badrinath Highway\\n*   **Current Status:** Active\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** Road completely impassable. Do not attempt to travel this route. Take the Karnaprayag alternate route. Expected clearance is in 48 hours. Contact SDRF Control Room (1070) for the latest updates.\\n*   **Nearby Facilities:** SDRF Control Room (1070), ITBP Rescue Base\\n\\n**6. 📍 MAP VIEW REQUESTED - Report #6 - Valley of Flowers Base Camp**\\n*   **Safety Verdict:** ⚠️ CAUTION\\n*   **Severity:** MEDIUM\\n*   **Issue:** Multiple insect bites at trekking camp\\n*   **Current Status:** Active\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** Apply ice to reduce swelling and discomfort. Take antihistamine if available and not contraindicated. Monitor for allergic reactions such as difficulty breathing, severe swelling, or rash. Contact the nearest Primary Health Center (PHC) if symptoms worsen or persist.\\n*   **Emergency Contacts:** 108 (Ambulance)\\n\\n**7. 📍 MAP VIEW REQUESTED - Report #7 - Ranikhet Main Road**\\n*   **Safety Verdict:** ⚠️ CAUTION\\n*   **Severity:** MEDIUM\\n*   **Issue:** Pothole cluster near school\\n*   **Current Status:** Active\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** Drive carefully at a reduced speed of 20 km/h. PWD repairs are scheduled to start tomorrow. Avoid the area during school hours (8 AM - 2 PM) to prevent accidents involving children.\\n*   **Emergency Contacts:** 1070 (Disaster Helpline)\\n\\n**8. 📍 MAP VIEW REQUESTED - Report #8 - Almora District Hospital**\\n*   **Safety Verdict:** ⚠️ CAUTION (Water Supply)\\n*   **Severity:** MEDIUM\\n*   **Issue:** Water storage tank leakage\\n*   **Current Status:** Active\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** Residents relying on this supply should store water in clean, covered containers at home. Report to Jal Sansthan for immediate action. Avoid direct consumption without boiling. Repairs are expected this week.\\n*   **Nearby Facilities:** Jal Sansthan Water Tanks\\n\\n**9. 📍 MAP VIEW REQUESTED - Report #9 - Kausani-Bageshwar Road**\\n*   **Safety Verdict:** ⚠️ CAUTION\\n*   **Severity:** LOW\\n*   **Issue:** Minor road subsidence observed\\n*   **Current Status:** Active\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** Stay in the center of the road to avoid the affected edges. Avoid parking near the edge where subsidence is observed. PWD has been notified for assessment. Use extra caution, especially during and after rainfall.\\n*   **Emergency Contacts:** 1070 (Disaster Helpline)\\n\\n**10. 📍 MAP VIEW REQUESTED - Report #10 - Bageshwar Community Hall**\\n*   **Safety Verdict:** ⚠️ CAUTION (Health)\\n*   **Severity:** MEDIUM\\n*   **Issue:** Food poisoning at community event\\n*   **Current Status:** Active\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** Stay hydrated with boiled water and Oral Rehydration Solution (ORS) if available. Rest is highly advised. A medical team has been dispatched to the location. Call 108 (Ambulance) immediately if severe vomiting, diarrhea, or signs of dehydration occur.\\n*   **Nearby Facilities:** District Hospital (nearest)\\n*   **Emergency Contacts:** 108 (Ambulance)\\n\\n**11. 📍 MAP VIEW REQUESTED - Report #11 - Munsiyari Village**\\n*   **Safety Verdict:** ❌ NOT SAFE (Water Supply)\\n*   **Severity:** HIGH\\n*   **Issue:** Spring water source dried up\\n*   **Current Status:** Active\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** An emergency tanker service has been arranged. Collect water from the designated distribution point at 6 AM and 6 PM daily. Conserve water strictly until the issue is resolved.\\n*   **Nearby Facilities:** Emergency Tanker Services\\n\\n**12. 📍 MAP VIEW REQUESTED - Report #12 - Chopta Forest Area**\\n*   **Safety Verdict:** ⚠️ CAUTION (Health)\\n*   **Severity:** HIGH\\n*   **Issue:** Severe allergic reaction to plant\\n*   **Current Status:** Active (Patient Stable)\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** Emergency: Patient was transported to a hospital. Administered antihistamine. Currently under ICU observation and stable now. Always be aware of local flora and avoid touching unknown plants. If hiking, carry an emergency kit including antihistamines.\\n*   **Nearby Facilities:** District Hospital Dehradun, AIIMS Rishikesh, Himalayan Medical Institute (nearest appropriate hospital)\\n*   **Emergency Contacts:** 108 (Ambulance)\\n\\n**13. 📍 MAP VIEW REQUESTED - Report #13 - Dhanaulti-Mussoorie Road**\\n*   **Safety Verdict:** ⚠️ CAUTION\\n*   **Severity:** MEDIUM\\n*   **Issue:** Foggy conditions causing visibility issues\\n*   **Current Status:** Active\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** Use fog lights and keep headlights on low beam. Reduce speed to 20 km/h. Avoid travel after 6 PM due to worsening fog. Consider an overnight stay in Mussoorie or Dhanaulti if traveling late. Fog is expected to persist till noon tomorrow.\\n*   **Emergency Contacts:** 100 (Police)\\n\\n**14. 📍 MAP VIEW REQUESTED - Report #14 - Lansdowne Cantonment Area**\\n*   **Safety Verdict:** ⚠️ CAUTION (Water Supply)\\n*   **Severity:** MEDIUM\\n*   **Issue:** Algae growth in overhead tank\\n*   **Current Status:** Active\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** Boil water thoroughly before use. Avoid drinking directly from the tap. Tank cleaning is scheduled for November 28. Use alternative sources of potable water if possible until cleaning is complete.\\n*   **Nearby Facilities:** Jal Sansthan Water Tanks\\n\\n**15. 📍 MAP VIEW REQUESTED - Report #15 - Alaknanda River Bridge, Srinagar**\\n*   **Safety Verdict:** ❌ NOT SAFE (Heavy Vehicles) / ⚠️ CAUTION (Light Vehicles)\\n*   **Severity:** HIGH\\n*   **Issue:** Bridge support damage detected\\n*   **Current Status:** Active\\n*   **Coordinates:** Available for map display\\n*   **Safety Advice:** Heavy vehicles are banned completely. Max 2 tons allowed for light vehicles, with only one vehicle permitted on the bridge at a time. Engineers are currently assessing the damage. An alternate bridge is available 12 km ahead; consider using it to avoid risks.\\n*   **Emergency Contacts:** 1070 (Disaster Helpline), PWD\\n\\n---\\n\\n**AVAILABLE EMERGENCY SERVICES & FACILITIES (General for Uttarakhand):**\\n\\n*   **Emergency Numbers:**\\n    *   **108:** Ambulance (Medical Emergencies)\\n    *   **1070:** Disaster Helpline (SDRF Control Room)\\n    *   **100:** Police (Law and Order, Road Accidents)\\n    *   **101:** Fire (Fire Incidents)\\n*   **Hospitals:**\\n    *   District Hospital Dehradun\\n    *   AIIMS Rishikesh\\n    *   Himalayan Medical Institute\\n    *   Base Hospital Haldwani\\n*   **Water Supply Centers:**\\n    *   Jal Sansthan Water Tanks\\n    *   Municipal Water Points\\n    *   Emergency Tanker Services\\n*   **Safety Centers:**\\n    *   SDRF Control Room (1070)\\n    *   District Emergency Operations Center\\n    *   ITBP Rescue Base\\n\\nAlways prioritize your safety and follow official guidance. If you have a specific location or concern, please provide it for a more tailored response.\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 1570,\n    \"candidatesTokenCount\": 2448,\n    \"totalTokenCount\": 5493,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 1570\n      }\n    ],\n    \"cacheTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 1009\n      }\n    ],\n    \"thoughtsTokenCount\": 1475\n  },\n  \"modelVersion\": \"gemini-2.5-flash\",\n  \"responseId\": \"tAYnadDMEOjPjuMPl_2PkAs\"\n}"
+[00:04:47.103] Server  LOG     Successfully received Gemini response
+[00:04:50.897] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:04:50.897] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:04:55.322] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:55.601] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/road-safety" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_d237d9f7-fc1d-40af-a729-1deb07ed15ce__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+
+[00:04:55.601] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:07:15.029] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:07:15.029] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:07:16.047] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:07:16.047] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:07:16.799] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:07:16.799] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:07:16.799] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:07:16.799] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:07:18.108] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:07:18.108] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:34.546] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:34.546] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:34.546] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:34.546] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:35.278] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:35.278] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:36.062] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:36.062] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:37.645] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:37.645] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:38.400] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:38.401] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:39.929] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:39.929] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:39.929] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:39.929] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:44.623] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:44.623] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:44.623] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:44.623] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:45.383] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:45.383] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:46.304] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:46.304] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:48.074] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:48.074] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:48.867] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:48.867] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:49.889] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:49.889] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:49.889] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:49.889] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:55.617] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:55.617] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:57.915] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:57.915] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:57.915] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:57.915] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:59.027] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:08:59.027] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:24.812] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:24.812] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:25.989] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:25.989] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:25.989] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:25.989] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:27.195] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:27.195] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:28.609] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:28.609] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:51.996] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:51.996] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:52.673] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:52.673] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:52.673] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:52.673] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:56.408] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:56.408] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:56.408] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:56.408] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:57.003] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:57.003] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:57.629] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:57.629] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:58.868] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:58.868] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:59.506] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:09:59.506] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:00.137] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:00.137] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:00.137] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:00.137] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:09.354] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:09.354] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:09.354] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:09.354] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:09.975] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:09.975] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:10.664] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:10.664] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:16.998] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:16.998] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:17.588] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:17.588] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:18.240] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:18.240] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:18.240] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:18.240] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:26.099] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:26.099] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:26.099] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:26.099] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:26.859] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:26.859] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:27.649] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:27.649] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:30.477] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:30.477] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:31.078] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:31.079] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:31.818] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:31.818] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:31.818] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:31.818] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:32.469] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:32.469] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:33.039] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:33.040] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:33.762] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:33.762] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:34.438] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:34.438] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:34.438] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:34.438] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:45.531] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:45.531] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:47.632] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:47.632] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:48.434] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:48.434] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:48.434] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:48.434] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:49.109] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:49.109] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:49.794] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:49.794] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:51.016] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:51.016] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:51.610] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:51.610] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:52.261] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:52.261] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:52.261] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:10:52.261] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:00.104] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:00.104] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:00.104] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:00.104] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:01.021] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:01.021] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:01.807] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:01.807] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:06.019] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:06.019] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:13.629] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:13.629] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:14.341] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:14.342] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:15.659] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:15.659] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:16.969] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:16.969] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:18.303] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:18.304] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:19.727] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:19.727] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:37.192] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:37.192] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:47.477] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:47.477] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:48.426] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:48.426] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:49.772] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:11:49.772] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:03.635] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:03.635] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:44.606] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:44.606] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:45.341] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:45.341] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:45.341] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:45.341] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:45.963] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:45.963] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:46.647] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:46.647] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:48.074] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:48.074] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:48.709] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:48.709] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:49.395] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:49.395] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:49.395] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:49.395] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:50.188] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:50.188] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:50.807] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:50.807] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:52.144] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:52.144] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:52.760] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:52.760] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:53.385] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:53.385] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:53.385] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:53.385] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:57.588] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:57.588] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:57.588] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:57.588] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:58.169] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:58.169] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:58.837] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:12:58.837] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:04.102] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:04.102] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:04.689] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:04.689] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:05.873] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:05.873] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:05.873] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:05.873] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:06.593] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:06.593] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:17.040] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:17.040] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:18.072] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:18.072] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:19.838] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:19.838] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:19.839] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:19.839] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:25.751] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:25.751] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:25.751] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:25.751] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:26.439] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:26.439] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:27.098] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:27.098] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:36.369] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:36.369] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:36.972] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:36.972] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:38.052] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:38.052] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:38.052] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:38.052] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:42.972] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:42.972] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:44.093] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:44.093] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:44.890] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:44.891] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:44.891] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:44.891] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:50.008] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:50.008] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:51.539] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:51.539] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:52.114] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:52.114] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:52.713] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:52.713] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:52.713] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:52.713] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:58.669] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:58.670] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:58.670] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:58.670] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:59.274] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:59.274] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:59.924] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:13:59.924] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:01.221] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:01.221] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:01.796] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:01.796] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:02.449] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:02.449] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:03.798] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:03.798] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:04.454] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:04.454] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:05.110] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:05.110] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:05.110] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:05.110] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:05.937] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:05.937] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:07.205] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:07.205] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:08.471] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:08.471] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:09.094] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:09.094] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:09.714] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:09.714] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:09.714] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:09.714] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:10.769] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:10.769] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:12.248] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:12.248] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:12.946] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:12.946] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:14.005] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:14.005] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:14.005] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:14.005] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:22.148] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:22.148] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:22.708] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:22.708] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:23.339] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:23.339] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:23.339] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:23.339] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:25.448] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:25.448] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:26.081] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:26.081] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:26.745] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:26.746] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:26.746] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:26.746] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:34.298] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:34.298] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:34.978] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:34.978] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:35.631] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:35.631] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:35.631] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:35.631] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:40.173] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:40.173] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:41.568] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:41.568] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:42.178] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:42.178] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:43.357] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:43.357] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:43.357] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:43.357] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:50.121] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:50.121] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:50.705] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:50.705] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:51.340] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:51.340] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:51.340] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:14:51.340] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:02.750] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:02.750] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:03.987] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:03.987] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:04.911] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:04.911] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:04.911] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:04.911] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:11.181] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:11.181] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:11.181] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:11.181] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:13.778] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:13.778] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:14.624] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:14.624] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:15.573] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:15.573] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:15.573] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:15.573] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:20.183] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:20.183] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:20.183] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:20.183] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:22.663] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:22.663] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:23.407] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:23.407] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:26.752] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:26.752] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:42.755] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:42.755] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:42.755] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:42.755] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:49.482] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:49.482] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:50.532] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:50.532] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:50.532] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:50.532] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:51.625] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:51.625] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:52.984] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:52.984] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:52.984] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:15:52.984] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:16:00.339] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:16:00.339] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:16:02.472] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:16:02.472] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:04.428] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:04.428] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:08.457] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:08.457] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:09.053] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:09.053] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:16.639] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:16.640] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:16.640] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:16.640] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:17.423] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:17.423] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:18.207] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:18.207] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:18.968] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:18.968] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:26.444] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:26.444] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:26.444] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:26.444] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:27.278] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:27.278] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:33.772] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:33.772] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:33.772] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:33.772] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:34.565] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:34.565] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:42.784] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:42.784] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:42.784] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:42.784] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:54.803] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:54.803] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:56.048] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:56.048] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:57.036] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:57.036] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:57.699] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:57.699] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:57.699] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:57.699] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:58.961] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:26:58.961] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:27:00.785] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:27:00.785] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:27:02.064] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:27:02.064] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:27:02.679] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:27:02.679] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:27:03.399] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:27:03.399] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:27:03.399] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:27:03.399] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:27:10.581] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:27:10.581] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:27:57.057] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:27:57.057] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:05.565] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:05.565] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:05.565] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:05.565] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:06.240] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:06.240] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:06.910] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:06.910] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:06.910] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:06.910] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:07.416] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:07.416] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:11.078] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:11.078] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:11.078] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:28:11.078] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:29:10.387] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:29:10.388] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:29:24.407] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:29:24.407] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:29:26.097] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:29:26.097] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:30:52.151] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:30:52.151] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:32:46.702] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:32:46.702] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:32:55.903] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:32:55.903] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:35:44.686] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:35:44.686] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:35:44.686] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:35:44.686] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:35:45.387] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:35:45.387] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:35:46.178] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:35:46.178] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:07.072] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:07.072] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:07.738] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:07.739] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:07.739] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:07.739] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:08.665] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:08.665] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:17.250] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:17.250] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:17.251] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:17.251] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:19.164] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:19.164] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:19.884] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:19.884] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:31.604] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:31.604] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:31.604] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:31.604] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:32.456] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:32.456] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:33.121] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:33.121] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:35.192] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:35.192] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:38.826] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:38.826] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:39.824] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:39.824] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:39.824] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:39.825] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:46.034] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:46.034] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:46.034] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:46.034] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:46.699] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:46.699] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:47.363] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:44:47.363] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:45:47.778] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:45:47.778] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:45:47.778] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:45:47.778] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:45:56.705] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[00:45:56.705] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[01:39:43.472] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[01:39:43.472] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[01:39:43.472] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[01:39:43.472] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[01:39:44.228] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[01:39:44.228] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[01:39:47.209] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[01:39:47.209] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[01:39:47.209] Browser ERROR   Geolocation error: 1 User denied Geolocation
+[01:39:47.209] Browser ERROR   Geolocation error: 1 User denied Geolocation

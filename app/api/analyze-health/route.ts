@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
     const image = formData.get("image") as File | null
     const description = formData.get("description") as string | null
 
-    const apiKey = process.env.GEMINI_API_KEY
+    const apiKey = process.env.GEMINI_API_KEY || "AIzaSyA-X-0mRg2OeQccMaLdQ1LawLDyUYbN5XM"
 
     if (!apiKey) {
       console.log("Using mock data - GEMINI_API_KEY not configured")
@@ -59,7 +59,7 @@ Always end advice with recommendation to seek professional help if needed.`,
     }
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

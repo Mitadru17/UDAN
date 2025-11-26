@@ -51,15 +51,13 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <span className="text-lg font-bold tracking-tight">
-                UD
-                <span className="inline-flex items-center justify-center">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#22c55e" className="mx-0.5">
-                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                  </svg>
-                </span>
-                N
-              </span>
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 shadow-md">
+                <span className="text-base font-bold text-white">U</span>
+              </div>
+              <div>
+                <span className="text-lg font-bold tracking-tight">UDAN</span>
+                <p className="text-[9px] text-muted-foreground leading-none">Disaster Aid</p>
+              </div>
             </div>
             <p className="text-sm text-muted-foreground">
               Uttarakhand Disaster Aid Network
